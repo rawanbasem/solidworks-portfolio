@@ -20,19 +20,8 @@
     section { padding: 2rem; max-width: 1000px; margin: auto; }
     .project { background: white; padding: 1rem; border-radius: 10px; margin-bottom: 2rem; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
     .project h3 { margin-top: 0; }
-    .slideshow-wrapper { position: relative; max-width: 600px; margin-top: 1rem; }
-    .slideshow-slide { display: none; width: 100%; border-radius: 8px; }
-    .slideshow-slide.active { display: block; }
-    .slideshow-controls { text-align: center; margin-top: 10px; }
-    .slideshow-button {
-      background-color: #2c3e50;
-      color: white;
-      border: none;
-      padding: 10px 15px;
-      margin: 0 5px;
-      border-radius: 5px;
-      cursor: pointer;
-    }
+    .slideshow-container { display: flex; overflow-x: auto; gap: 10px; padding-top: 10px; }
+    .slideshow-container img { width: 200px; height: auto; border-radius: 8px; flex-shrink: 0; }
     footer { text-align: center; padding: 2rem; background: #2c3e50; color: white; }
     #backToTop { position: fixed; bottom: 20px; right: 20px; background: #2c3e50; color: white; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer; }
     .timeline { position: relative; padding-left: 30px; border-left: 3px solid #2c3e50; }
@@ -76,18 +65,14 @@
     <div class="project">
       <h3>CAD Model of High Bypass Turbofan Engine</h3>
       <p>Created a full 3D model in SolidWorks. Led the team in material selection and produced detailed technical drawings for each component and the overall assembly.</p>
-      <div class="slideshow-wrapper">
-        <img class="slideshow-slide active" src="PHOTO-2024-10-26-13-42-23.jpg" alt="Turbofan Engine" />
-        <img class="slideshow-slide" src="PHOTO-2024-10-26-13-42-23 2.jpg" alt="Turbofan Component" />
-        <img class="slideshow-slide" src="PHOTO-2024-10-26-13-42-23 3.jpg" alt="Turbofan Cutaway" />
-        <img class="slideshow-slide" src="PHOTO-2024-10-26-13-42-23 4.jpg" alt="Component Detail" />
-        <img class="slideshow-slide" src="PHOTO-2024-10-26-13-42-23 5.jpg" alt="Fan Blade Design" />
-        <img class="slideshow-slide" src="PHOTO-2024-10-26-13-42-23 6.jpg" alt="Combustion Chamber View" />
-        <img class="slideshow-slide" src="PHOTO-2024-10-26-13-42-23 7.jpg" alt="Full Engine Layout" />
-        <div class="slideshow-controls">
-          <button class="slideshow-button" onclick="changeSlide(-1)"> <- </button>
-          <button class="slideshow-button" onclick="changeSlide(1)">Next</button>
-        </div>
+      <div class="slideshow-container">
+        <img src="PHOTO-2024-10-26-13-42-23.jpg" alt="Turbofan Engine" />
+        <img src="PHOTO-2024-10-26-13-42-23 2.jpg" alt="Turbofan Component" />
+        <img src="PHOTO-2024-10-26-13-42-23 3.jpg" alt="Turbofan Cutaway" />
+        <img src="PHOTO-2024-10-26-13-42-23 4.jpg" alt="Component Detail" />
+        <img src="PHOTO-2024-10-26-13-42-23 5.jpg" alt="Fan Blade Design" />
+        <img src="PHOTO-2024-10-26-13-42-23 6.jpg" alt="Combustion Chamber View" />
+        <img src="PHOTO-2024-10-26-13-42-23 7.jpg" alt="Full Engine Layout" />
       </div>
     </div>
 
@@ -149,16 +134,5 @@
   </footer>
 
   <button id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">Back to Top</button>
-
-  <script>
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.slideshow-slide');
-
-    function changeSlide(direction) {
-      slides[currentSlide].classList.remove('active');
-      currentSlide = (currentSlide + direction + slides.length) % slides.length;
-      slides[currentSlide].classList.add('active');
-    }
-  </script>
 </body>
 </html>
