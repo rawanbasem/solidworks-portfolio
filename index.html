@@ -1,138 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rawan Basem | SolidWorks Portfolio</title>
-  <style>
-    body {
-      font-family: 'Times New Roman', Times, serif, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f5f5f5;
-      scroll-behavior: smooth;
-      line-height: 1.8;
-      font-size: 18px;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rawan Basem | SolidWorks Portfolio</title>
+  <style>
+    body {
+      font-family: 'Times New Roman', Times, serif, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f5f5;
+      scroll-behavior: smooth;
+      line-height: 1.8;
+      font-size: 18px;
+    }
+    header { background-color: #2c3e50; color: white; padding: 2rem 1rem; text-align: center; }
+    nav { text-align: center; background: #34495e; padding: 1rem; }
+    nav a { color: white; margin: 0 1rem; text-decoration: none; }
+    section { padding: 2rem; max-width: 1000px; margin: auto; }
+    .project { background: white; padding: 1rem; border-radius: 10px; margin-bottom: 2rem; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    .project h3 { margin-top: 0; }
+    /* This targets all images directly within a project div */
+    .project img {
+      max-width: 100%; /* Ensures images don't overflow their container */
+      height: auto; /* Maintains aspect ratio */
+      display: block; /* Removes extra space below images */
+      margin: 0 auto 10px auto; /* Centers the image and adds some bottom margin */
+      border-radius: 8px; /* Apply consistent border-radius */
     }
-    header { background-color: #2c3e50; color: white; padding: 2rem 1rem; text-align: center; }
-    nav { text-align: center; background: #34495e; padding: 1rem; }
-    nav a { color: white; margin: 0 1rem; text-decoration: none; }
-    section { padding: 2rem; max-width: 1000px; margin: auto; }
-    .project { background: white; padding: 1rem; border-radius: 10px; margin-bottom: 2rem; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-    .project h3 { margin-top: 0; }
-    .slideshow-container { display: flex; overflow-x: auto; gap: 10px; padding-top: 10px; }
-    .slideshow-container img { width: 200px; height: auto; border-radius: 8px; flex-shrink: 0; }
-    footer { text-align: center; padding: 2rem; background: #2c3e50; color: white; }
-    #backToTop { position: fixed; bottom: 20px; right: 20px; background: #2c3e50; color: white; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer; }
-    .timeline { position: relative; padding-left: 30px; border-left: 3px solid #2c3e50; }
-    .timeline-item { margin-bottom: 2rem; position: relative; padding-left: 20px; }
-    .timeline-item::before {
-      content: '';
-      position: absolute;
-      left: -11px;
-      top: 4px;
-      width: 12px;
-      height: 12px;
-      background: #2c3e50;
-      border-radius: 50%;
+    .slideshow-container {
+      display: flex;
+      overflow-x: auto;
+      gap: 10px;
+      padding-top: 10px;
+      justify-content: center; /* Center items if they don't fill the width */
+      align-items: flex-start; /* Align items to the top if heights vary */
     }
-    .timeline-item strong { font-size: 1.1em; display: block; margin-bottom: 0.3em; }
-  </style>
+    /* Specific styling for images within the slideshow to ensure consistent height */
+    .slideshow-container img {
+      width: 200px; /* You can keep a fixed width for the slideshow images if you like this size */
+      height: 150px; /* Set a fixed height for consistency in the slideshow */
+      object-fit: cover; /* This will crop the image to fit, preventing distortion */
+      flex-shrink: 0;
+    }
+    footer { text-align: center; padding: 2rem; background: #2c3e50; color: white; }
+    #backToTop { position: fixed; bottom: 20px; right: 20px; background: #2c3e50; color: white; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer; }
+    .timeline { position: relative; padding-left: 30px; border-left: 3px solid #2c3e50; }
+    .timeline-item { margin-bottom: 2rem; position: relative; padding-left: 20px; }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -11px;
+      top: 4px;
+      width: 12px;
+      height: 12px;
+      background: #2c3e50;
+      border-radius: 50%;
+    }
+    .timeline-item strong { font-size: 1.1em; display: block; margin-bottom: 0.3em; }
+  </style>
 </head>
 <body>
-  <header id="top">
-    <h1>Rawan Basem Almaslami</h1>
-    <p>Mechatronics Engineering graduate | CAD & SolidWorks enthusiast</p>
-  </header>
+  <header id="top">
+    <h1>Rawan Basem Almaslami</h1>
+    <p>Mechatronics Engineering graduate | CAD & SolidWorks enthusiast</p>
+  </header>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#skills">Skills</a>
-    <a href="#certificates">Certificates</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#certificates">Certificates</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>I am a Mechatronics Engineering graduate from Sabancı University, with a passion for mechanical design, robotics, and CAD modeling.
-      With hands-on experience in SolidWorks, MATLAB, and Python, I enjoy designing complex systems and contributing to innovative engineering projects. My interests include drawing, diving, and exploring technologies that enhance automation and space systems.</p>
-  </section>
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I am a Mechatronics Engineering graduate from Sabancı University, with a passion for mechanical design, robotics, and CAD modeling.
+      With hands-on experience in SolidWorks, MATLAB, and Python, I enjoy designing complex systems and contributing to innovative engineering projects. My interests include drawing, diving, and exploring technologies that enhance automation and space systems.</p>
+  </section>
 
-  <section id="projects">
-    <h2>Featured Projects</h2>
+  <section id="projects">
+    <h2>Featured Projects</h2>
 
-    <div class="project">
-      <h3>CAD Model of High Bypass Turbofan Engine</h3>
-      <p>Created a full 3D model in SolidWorks. Led the team in material selection and produced detailed technical drawings for each component and the overall assembly.</p>
-      <div class="slideshow-container">
-        <img src="PHOTO-2024-10-26-13-42-23.jpg" alt="Turbofan Engine" />
-        <img src="PHOTO-2024-10-26-13-42-23 2.jpg" alt="Turbofan Component" />
-        <img src="PHOTO-2024-10-26-13-42-23 3.jpg" alt="Turbofan Cutaway" />
-        <img src="PHOTO-2024-10-26-13-42-23 4.jpg" alt="Component Detail" />
-        <img src="PHOTO-2024-10-26-13-42-23 5.jpg" alt="Fan Blade Design" />
-        <img src="PHOTO-2024-10-26-13-42-23 6.jpg" alt="Combustion Chamber View" />
-        <img src="PHOTO-2024-10-26-13-42-23 7.jpg" alt="Full Engine Layout" />
-      </div>
-    </div>
+    <div class="project">
+      <h3>CAD Model of High Bypass Turbofan Engine</h3>
+      <p>Created a full 3D model in SolidWorks. Led the team in material selection and produced detailed technical drawings for each component and the overall assembly.</p>
+      <div class="slideshow-container">
+        <img src="PHOTO-2024-10-26-13-42-23.jpg" alt="Turbofan Engine" />
+        <img src="PHOTO-2024-10-26-13-42-23 2.jpg" alt="Turbofan Component" />
+        <img src="PHOTO-2024-10-26-13-42-23 3.jpg" alt="Turbofan Cutaway" />
+        <img src="PHOTO-2024-10-26-13-42-23 4.jpg" alt="Component Detail" />
+        <img src="PHOTO-2024-10-26-13-42-23 5.jpg" alt="Fan Blade Design" />
+        <img src="PHOTO-2024-10-26-13-42-23 6.jpg" alt="Combustion Chamber View" />
+        <img src="PHOTO-2024-10-26-13-42-23 7.jpg" alt="Full Engine Layout" />
+      </div>
+    </div>
 
-    <div class="project">
-      <h3>SU-Polymer CubeSat Structure</h3>
-      <p>Led structural design in a space mission testing 2DPA-1 super-material. Created a precise CAD structure that integrates mechanical and electronic components.</p>
-      <img src="PHOTO-2024-10-26-13-47-04.jpg" alt="CubeSat Design" />
-    </div>
+    <div class="project">
+      <h3>SU-Polymer CubeSat Structure</h3>
+      <p>Led structural design in a space mission testing 2DPA-1 super-material. Created a precise CAD structure that integrates mechanical and electronic components.</p>
+      <img src="PHOTO-2024-10-26-13-47-04.jpg" alt="CubeSat Design" />
+    </div>
 
-    <div class="project">
-      <h3>Stair Platform Assembly</h3>
-      <p>Designed a steel staircase platform using SolidWorks. Considered assembly constraints and stability during design.</p>
-      <img src="PHOTO-2024-10-26-13-47-05 2.jpg" alt="Stair Structure" />
-    </div>
+    <div class="project">
+      <h3>Stair Platform Assembly</h3>
+      <p>Designed a steel staircase platform using SolidWorks. Considered assembly constraints and stability during design.</p>
+      <img src="PHOTO-2024-10-26-13-47-05 2.jpg" alt="Stair Structure" />
+    </div>
 
-    <div class="project">
-      <h3>Manipulator Robot Arm Design</h3>
-      <p>Designed and simulated a robotic arm in SolidWorks. Integrated motor simulations using LTspice and implemented control algorithms in MATLAB.</p>
-      <img src="robotic_arm.jpg" alt="Robotic Arm Model" />
-    </div>
-  </section>
+    <div class="project">
+      <h3>Manipulator Robot Arm Design</h3>
+      <p>Designed and simulated a robotic arm in SolidWorks. Integrated motor simulations using LTspice and implemented control algorithms in MATLAB.</p>
+      <img src="robotic_arm.jpg" alt="Robotic Arm Model" />
+    </div>
+  </section>
 
-  <section id="skills">
-    <h2>Skills & Tools</h2>
-    <ul>
-      <li>SolidWorks (3D modeling, assemblies, drawings, motion studies)</li>
-      <li>MATLAB & Simulink (Control systems, modeling)</li>
-      <li>Python, C++ (Basic programming for automation and simulation)</li>
-      <li>LTspice (Electrical simulation)</li>
-      <li>Team Collaboration, Problem Solving, Critical Thinking</li>
-    </ul>
-  </section>
+  <section id="skills">
+    <h2>Skills & Tools</h2>
+    <ul>
+      <li>SolidWorks (3D modeling, assemblies, drawings, motion studies)</li>
+      <li>MATLAB & Simulink (Control systems, modeling)</li>
+      <li>Python, C++ (Basic programming for automation and simulation)</li>
+      <li>LTspice (Electrical simulation)</li>
+      <li>Team Collaboration, Problem Solving, Critical Thinking</li>
+    </ul>
+  </section>
 
-  <section id="certificates">
-    <h2>Certificates</h2>
-    <div class="timeline">
-      <div class="timeline-item">
-        <strong>MATLAB Onramp</strong>
-        Completed: 26 February 2024<br>
-        <a href="certificate_matlab.pdf" target="_blank">View Certificate (PDF)</a>
-      </div>
-      <div class="timeline-item">
-        <strong>Simulink Onramp</strong>
-        Completed: 1 March 2024<br>
-        <a href="certificate_Simulink.pdf" target="_blank">View Certificate (PDF)</a>
-      </div>
-    </div>
-  </section>
+  <section id="certificates">
+    <h2>Certificates</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <strong>MATLAB Onramp</strong>
+        Completed: 26 February 2024<br>
+        <a href="certificate_matlab.pdf" target="_blank">View Certificate (PDF)</a>
+      </div>
+      <div class="timeline-item">
+        <strong>Simulink Onramp</strong>
+        Completed: 1 March 2024<br>
+        <a href="certificate_Simulink.pdf" target="_blank">View Certificate (PDF)</a>
+      </div>
+    </div>
+  </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:rawanbasem@sabanciuniv.edu">rawanbasem@sabanciuniv.edu</a></p>
-    <p>Phone: +90 555 061 9447</p>
-    <p>Location: Çekmeköy, Istanbul, Turkey</p>
-  </section>
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:rawanbasem@sabanciuniv.edu">rawanbasem@sabanciuniv.edu</a></p>
+    <p>Phone: +90 555 061 9447</p>
+    <p>Location: Çekmeköy, Istanbul, Turkey</p>
+  </section>
 
-  <footer>
-    <p>&copy; 2025 Rawan Basem Almaslami | SolidWorks Portfolio</p>
-  </footer>
+  <footer>
+    <p>&copy; 2025 Rawan Basem Almaslami | SolidWorks Portfolio</p>
+  </footer>
 
-  <button id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">Back to Top</button>
+  <button id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">Back to Top</button>
 </body>
 </html>
