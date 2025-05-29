@@ -1,159 +1,253 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rawan Basem | SolidWorks Portfolio</title>
-  <style>
-    body {
-      font-family: 'Times New Roman', Times, serif, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f5f5f5;
-      scroll-behavior: smooth;
-      line-height: 1.8;
-      font-size: 18px;
-    }
-    header { background-color: #2c3e50; color: white; padding: 2rem 1rem; text-align: center; }
-    nav { text-align: center; background: #34495e; padding: 1rem; }
-    nav a { color: white; margin: 0 1rem; text-decoration: none; }
-    section { padding: 2rem; max-width: 1000px; margin: auto; }
-    .project { background: white; padding: 1rem; border-radius: 10px; margin-bottom: 2rem; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-    .project h3 { margin-top: 0; }
-    /* This targets all images directly within a project div */
-    .project img {
-      max-width: 100%; /* Ensures images don't overflow their container */
-      height: auto; /* Maintains aspect ratio */
-      display: block; /* Removes extra space below images */
-      margin: 0 auto 10px auto; /* Centers the image and adds some bottom margin */
-      border-radius: 8px; /* Apply consistent border-radius */
-    }
-    .slideshow-container {
-      display: flex;
-      overflow-x: auto;
-      gap: 10px;
-      padding-top: 10px;
-      justify-content: center; /* Center items if they don't fill the width */
-      align-items: flex-start; /* Align items to the top if heights vary */
-    }
-    /* Specific styling for images within the slideshow to ensure consistent height */
-    .slideshow-container img {
-      width: 200px; /* You can keep a fixed width for the slideshow images if you like this size */
-      height: 150px; /* Set a fixed height for consistency in the slideshow */
-      object-fit: cover; /* This will crop the image to fit, preventing distortion */
-      flex-shrink: 0;
-    }
-    footer { text-align: center; padding: 2rem; background: #2c3e50; color: white; }
-    #backToTop { position: fixed; bottom: 20px; right: 20px; background: #2c3e50; color: white; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer; }
-    .timeline { position: relative; padding-left: 30px; border-left: 3px solid #2c3e50; }
-    .timeline-item { margin-bottom: 2rem; position: relative; padding-left: 20px; }
-    .timeline-item::before {
-      content: '';
-      position: absolute;
-      left: -11px;
-      top: 4px;
-      width: 12px;
-      height: 12px;
-      background: #2c3e50;
-      border-radius: 50%;
-    }
-    .timeline-item strong { font-size: 1.1em; display: block; margin-bottom: 0.3em; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rawan Basem | SolidWorks Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        /* Custom scrollbar for image slideshow (optional, but nice touch) */
+        .slideshow-container::-webkit-scrollbar {
+            height: 8px;
+        }
+        .slideshow-container::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        .slideshow-container::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 10px;
+        }
+        .slideshow-container::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+        /* Simple fade-in animation for sections */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
-<body>
-  <header id="top">
-    <h1>Rawan Basem Almaslami</h1>
-    <p>Mechatronics Engineering graduate | CAD & SolidWorks enthusiast</p>
-  </header>
+<body class="bg-gradient-to-br from-slate-900 to-slate-800 text-gray-200 antialiased">
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#skills">Skills</a>
-    <a href="#certificates">Certificates</a>
-    <a href="#contact">Contact</a>
-  </nav>
+    <header id="top" class="py-16 text-center bg-slate-900/80 backdrop-blur-md shadow-xl">
+        <div class="container mx-auto px-6">
+            <h1 class="text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-cyan-300 to-teal-400 mb-4">
+                Rawan Basem Almaslami
+            </h1>
+            <p class="text-xl md:text-2xl text-sky-200">
+                Mechatronics Engineering Graduate | CAD & SolidWorks Enthusiast
+            </p>
+        </div>
+    </header>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>I am a Mechatronics Engineering graduate from Sabancı University, with a passion for mechanical design, robotics, and CAD modeling.
-      With hands-on experience in SolidWorks, MATLAB, and Python, I enjoy designing complex systems and contributing to innovative engineering projects. My interests include drawing, diving, and exploring technologies that enhance automation and space systems.</p>
-  </section>
+    <nav class="sticky top-0 z-50 bg-slate-800/70 backdrop-blur-md shadow-lg">
+        <div class="container mx-auto px-6 py-4 flex justify-center space-x-4 md:space-x-8">
+            <a href="#about" class="text-gray-300 hover:text-sky-400 transition-colors duration-300 px-3 py-2 rounded-md text-sm font-medium">About</a>
+            <a href="#projects" class="text-gray-300 hover:text-sky-400 transition-colors duration-300 px-3 py-2 rounded-md text-sm font-medium">Projects</a>
+            <a href="#skills" class="text-gray-300 hover:text-sky-400 transition-colors duration-300 px-3 py-2 rounded-md text-sm font-medium">Skills</a>
+            <a href="#certificates" class="text-gray-300 hover:text-sky-400 transition-colors duration-300 px-3 py-2 rounded-md text-sm font-medium">Certificates</a>
+            <a href="#contact" class="text-gray-300 hover:text-sky-400 transition-colors duration-300 px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+        </div>
+    </nav>
 
-  <section id="projects">
-    <h2>Featured Projects</h2>
+    <main class="container mx-auto px-6 py-12">
 
-    <div class="project">
-      <h3>CAD Model of High Bypass Turbofan Engine</h3>
-      <p>Created a full 3D model in SolidWorks. Led the team in material selection and produced detailed technical drawings for each component and the overall assembly.</p>
-      <div class="slideshow-container">
-        <img src="PHOTO-2024-10-26-13-42-23.jpg" alt="Turbofan Engine" />
-        <img src="PHOTO-2024-10-26-13-42-23 2.jpg" alt="Turbofan Component" />
-        <img src="PHOTO-2024-10-26-13-42-23 3.jpg" alt="Turbofan Cutaway" />
-        <img src="PHOTO-2024-10-26-13-42-23 4.jpg" alt="Component Detail" />
-        <img src="PHOTO-2024-10-26-13-42-23 5.jpg" alt="Fan Blade Design" />
-        <img src="PHOTO-2024-10-26-13-42-23 6.jpg" alt="Combustion Chamber View" />
-        <img src="PHOTO-2024-10-26-13-42-23 7.jpg" alt="Full Engine Layout" />
-      </div>
-    </div>
+        <section id="about" class="mb-20 fade-in-section">
+            <h2 class="text-4xl font-semibold mb-8 text-sky-400 border-b-2 border-sky-500/30 pb-2">About Me</h2>
+            <div class="bg-slate-800 p-8 rounded-xl shadow-2xl text-lg leading-relaxed text-gray-300">
+                <p>
+                    I am a Mechatronics Engineering graduate from Sabancı University, with a passion for mechanical design, robotics, and CAD modeling.
+                    With hands-on experience in SolidWorks, MATLAB, and Python, I enjoy designing complex systems and contributing to innovative engineering projects. My interests include drawing, diving, and exploring technologies that enhance automation and space systems.
+                </p>
+            </div>
+        </section>
 
-    <div class="project">
-      <h3>SU-Polymer CubeSat Structure</h3>
-      <p>Led structural design in a space mission testing 2DPA-1 super-material. Created a precise CAD structure that integrates mechanical and electronic components.</p>
-      <img src="PHOTO-2024-10-26-13-47-04.jpg" alt="CubeSat Design" />
-    </div>
+        <section id="projects" class="mb-20 fade-in-section">
+            <h2 class="text-4xl font-semibold mb-12 text-sky-400 border-b-2 border-sky-500/30 pb-2">Featured Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
 
-    <div class="project">
-      <h3>Stair Platform Assembly</h3>
-      <p>Designed a steel staircase platform using SolidWorks. Considered assembly constraints and stability during design.</p>
-      <img src="PHOTO-2024-10-26-13-47-05 2.jpg" alt="Stair Structure" />
-    </div>
+                <div class="project-card bg-slate-800 rounded-xl shadow-2xl overflow-hidden transform hover:scale-105 transition-transform duration-300 flex flex-col">
+                    <div class="p-6 flex-grow">
+                        <h3 class="text-2xl font-semibold mb-3 text-sky-300">CAD Model of High Bypass Turbofan Engine</h3>
+                        <p class="text-gray-400 mb-4 text-sm leading-relaxed">Created a full 3D model in SolidWorks. Led the team in material selection and produced detailed technical drawings for each component and the overall assembly.</p>
+                    </div>
+                    <div class="slideshow-container p-4 bg-slate-700/50 flex overflow-x-auto space-x-3">
+                        <img src="PHOTO-2024-10-26-13-42-23.jpg" alt="Turbofan Engine" class="h-40 w-auto object-cover rounded-lg shadow-md cursor-pointer hover:opacity-80 transition-opacity" onerror="this.src='https://placehold.co/300x200/334155/94a3b8?text=Turbofan+1'; this.onerror=null;"/>
+                        <img src="PHOTO-2024-10-26-13-42-23 2.jpg" alt="Turbofan Component" class="h-40 w-auto object-cover rounded-lg shadow-md cursor-pointer hover:opacity-80 transition-opacity" onerror="this.src='https://placehold.co/300x200/334155/94a3b8?text=Turbofan+2'; this.onerror=null;"/>
+                        <img src="PHOTO-2024-10-26-13-42-23 3.jpg" alt="Turbofan Cutaway" class="h-40 w-auto object-cover rounded-lg shadow-md cursor-pointer hover:opacity-80 transition-opacity" onerror="this.src='https://placehold.co/300x200/334155/94a3b8?text=Turbofan+3'; this.onerror=null;"/>
+                        <img src="PHOTO-2024-10-26-13-42-23 4.jpg" alt="Component Detail" class="h-40 w-auto object-cover rounded-lg shadow-md cursor-pointer hover:opacity-80 transition-opacity" onerror="this.src='https://placehold.co/300x200/334155/94a3b8?text=Turbofan+4'; this.onerror=null;"/>
+                        <img src="PHOTO-2024-10-26-13-42-23 5.jpg" alt="Fan Blade Design" class="h-40 w-auto object-cover rounded-lg shadow-md cursor-pointer hover:opacity-80 transition-opacity" onerror="this.src='https://placehold.co/300x200/334155/94a3b8?text=Turbofan+5'; this.onerror=null;"/>
+                        <img src="PHOTO-2024-10-26-13-42-23 6.jpg" alt="Combustion Chamber View" class="h-40 w-auto object-cover rounded-lg shadow-md cursor-pointer hover:opacity-80 transition-opacity" onerror="this.src='https://placehold.co/300x200/334155/94a3b8?text=Turbofan+6'; this.onerror=null;"/>
+                        <img src="PHOTO-2024-10-26-13-42-23 7.jpg" alt="Full Engine Layout" class="h-40 w-auto object-cover rounded-lg shadow-md cursor-pointer hover:opacity-80 transition-opacity" onerror="this.src='https://placehold.co/300x200/334155/94a3b8?text=Turbofan+7'; this.onerror=null;"/>
+                    </div>
+                </div>
 
-    <div class="project">
-      <h3>Manipulator Robot Arm Design</h3>
-      <p>Designed and simulated a robotic arm in SolidWorks. Integrated motor simulations using LTspice and implemented control algorithms in MATLAB.</p>
-      <img src="robotic_arm.jpg" alt="Robotic Arm Model" />
-    </div>
-  </section>
+                <div class="project-card bg-slate-800 rounded-xl shadow-2xl overflow-hidden transform hover:scale-105 transition-transform duration-300 flex flex-col">
+                     <img src="PHOTO-2024-10-26-13-47-04.jpg" alt="CubeSat Design" class="w-full h-56 object-cover" onerror="this.src='https://placehold.co/400x300/334155/94a3b8?text=CubeSat'; this.onerror=null;"/>
+                    <div class="p-6 flex-grow">
+                        <h3 class="text-2xl font-semibold mb-3 text-sky-300">SU-Polymer CubeSat Structure</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Led structural design in a space mission testing 2DPA-1 super-material. Created a precise CAD structure that integrates mechanical and electronic components.</p>
+                    </div>
+                </div>
 
-  <section id="skills">
-    <h2>Skills & Tools</h2>
-    <ul>
-      <li>SolidWorks (3D modeling, assemblies, drawings, motion studies)</li>
-      <li>MATLAB & Simulink (Control systems, modeling)</li>
-      <li>Python, C++ (Basic programming for automation and simulation)</li>
-      <li>LTspice (Electrical simulation)</li>
-      <li>Team Collaboration, Problem Solving, Critical Thinking</li>
-    </ul>
-  </section>
+                <div class="project-card bg-slate-800 rounded-xl shadow-2xl overflow-hidden transform hover:scale-105 transition-transform duration-300 flex flex-col">
+                    <img src="PHOTO-2024-10-26-13-47-05 2.jpg" alt="Stair Structure" class="w-full h-56 object-cover" onerror="this.src='https://placehold.co/400x300/334155/94a3b8?text=Stair+Platform'; this.onerror=null;"/>
+                    <div class="p-6 flex-grow">
+                        <h3 class="text-2xl font-semibold mb-3 text-sky-300">Stair Platform Assembly</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Designed a steel staircase platform using SolidWorks. Considered assembly constraints and stability during design.</p>
+                    </div>
+                </div>
 
-  <section id="certificates">
-    <h2>Certificates</h2>
-    <div class="timeline">
-      <div class="timeline-item">
-        <strong>MATLAB Onramp</strong>
-        Completed: 26 February 2024<br>
-        <a href="certificate_matlab.pdf" target="_blank">View Certificate (PDF)</a>
-      </div>
-      <div class="timeline-item">
-        <strong>Simulink Onramp</strong>
-        Completed: 1 March 2024<br>
-        <a href="certificate_Simulink.pdf" target="_blank">View Certificate (PDF)</a>
-      </div>
-    </div>
-  </section>
+                <div class="project-card bg-slate-800 rounded-xl shadow-2xl overflow-hidden transform hover:scale-105 transition-transform duration-300 flex flex-col md:col-span-1 lg:col-span-1">
+                     <img src="robotic_arm.jpg" alt="Robotic Arm Model" class="w-full h-56 object-cover" onerror="this.src='https://placehold.co/400x300/334155/94a3b8?text=Robotic+Arm'; this.onerror=null;"/>
+                    <div class="p-6 flex-grow">
+                        <h3 class="text-2xl font-semibold mb-3 text-sky-300">Manipulator Robot Arm Design</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Designed and simulated a robotic arm in SolidWorks. Integrated motor simulations using LTspice and implemented control algorithms in MATLAB.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:rawanbasem@sabanciuniv.edu">rawanbasem@sabanciuniv.edu</a></p>
-    <p>Phone: +90 555 061 9447</p>
-    <p>Location: Çekmeköy, Istanbul, Turkey</p>
-  </section>
+        <section id="skills" class="mb-20 fade-in-section">
+            <h2 class="text-4xl font-semibold mb-8 text-sky-400 border-b-2 border-sky-500/30 pb-2">Skills & Tools</h2>
+            <div class="bg-slate-800 p-8 rounded-xl shadow-2xl">
+                <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 text-lg">
+                    {[
+                        "SolidWorks (3D modeling, assemblies, drawings, motion studies)",
+                        "MATLAB & Simulink (Control systems, modeling)",
+                        "Python, C++ (Basic programming for automation and simulation)",
+                        "LTspice (Electrical simulation)",
+                        "Team Collaboration",
+                        "Problem Solving",
+                        "Critical Thinking",
+                        "CAD Design",
+                        "Mechanical Engineering"
+                    ].map(skill => (
+                        <li key={skill} class="flex items-center space-x-3 p-3 bg-slate-700/50 rounded-lg hover:bg-sky-700/30 transition-colors">
+                            <svg class="w-6 h-6 text-sky-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <span class="text-gray-300">{skill}</span>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+        </section>
 
-  <footer>
-    <p>&copy; 2025 Rawan Basem Almaslami | SolidWorks Portfolio</p>
-  </footer>
+        <section id="certificates" class="mb-20 fade-in-section">
+            <h2 class="text-4xl font-semibold mb-8 text-sky-400 border-b-2 border-sky-500/30 pb-2">Certificates</h2>
+            <div class="bg-slate-800 p-8 rounded-xl shadow-2xl">
+                <div class="relative border-l-4 border-sky-500/50 pl-6 space-y-10">
+                    <div class="timeline-item relative">
+                        <div class="absolute w-4 h-4 bg-sky-400 rounded-full -left-[34.5px] top-1 border-4 border-slate-800"></div>
+                        <h3 class="text-xl font-semibold text-sky-300 mb-1">MATLAB Onramp</h3>
+                        <p class="text-sm text-gray-400 mb-2">Completed: 26 February 2024</p>
+                        <a href="certificate_matlab.pdf" target="_blank" class="inline-block text-sky-400 hover:text-sky-300 hover:underline transition-colors duration-300 text-sm font-medium">
+                            View Certificate (PDF)
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline-block ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="timeline-item relative">
+                        <div class="absolute w-4 h-4 bg-sky-400 rounded-full -left-[34.5px] top-1 border-4 border-slate-800"></div>
+                        <h3 class="text-xl font-semibold text-sky-300 mb-1">Simulink Onramp</h3>
+                        <p class="text-sm text-gray-400 mb-2">Completed: 1 March 2024</p>
+                        <a href="certificate_Simulink.pdf" target="_blank" class="inline-block text-sky-400 hover:text-sky-300 hover:underline transition-colors duration-300 text-sm font-medium">
+                            View Certificate (PDF)
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline-block ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <button id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">Back to Top</button>
+        <section id="contact" class="mb-12 fade-in-section">
+            <h2 class="text-4xl font-semibold mb-8 text-sky-400 border-b-2 border-sky-500/30 pb-2">Get In Touch</h2>
+            <div class="bg-slate-800 p-8 rounded-xl shadow-2xl text-lg text-center">
+                <p class="mb-4 text-gray-300">Feel free to reach out for collaborations or inquiries!</p>
+                <p class="mb-2">
+                    <a href="mailto:rawanbasem@sabanciuniv.edu" class="text-sky-400 hover:text-sky-300 hover:underline transition-colors duration-300">rawanbasem@sabanciuniv.edu</a>
+                </p>
+                <p class="mb-2 text-gray-300">Phone: +90 555 061 9447</p>
+                <p class="text-gray-400 text-sm">Çekmeköy, Istanbul, Turkey</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="text-center py-8 bg-slate-900 border-t border-slate-700">
+        <p class="text-gray-500">&copy; <span id="currentYear"></span> Rawan Basem Almaslami | SolidWorks Portfolio</p>
+    </footer>
+
+    <button id="backToTop" title="Go to top"
+        class="fixed bottom-5 right-5 p-3 rounded-full bg-sky-500 text-white hover:bg-sky-600 transition-all duration-300 shadow-lg opacity-0 transform translate-y-5 focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
+
+    <script>
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Back to Top button functionality
+        const backToTopButton = document.getElementById('backToTop');
+        window.onscroll = function() {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                backToTopButton.style.opacity = "1";
+                backToTopButton.style.transform = "translateY(0)";
+            } else {
+                backToTopButton.style.opacity = "0";
+                backToTopButton.style.transform = "translateY(20px)";
+            }
+        };
+        backToTopButton.onclick = function() {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        };
+
+        // Fade-in sections on scroll
+        const sections = document.querySelectorAll('.fade-in-section');
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1 // Trigger when 10% of the section is visible
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target); // Optional: stop observing after it's visible
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // Image modal (basic example, can be expanded)
+        const projectImages = document.querySelectorAll('.project-card img, .slideshow-container img');
+        projectImages.forEach(img => {
+            img.addEventListener('click', () => {
+                // You could implement a more sophisticated modal here
+                // For now, let's just log or open in new tab as an example
+                console.log('Image clicked:', img.src);
+                // window.open(img.src, '_blank'); // Example: open image in new tab
+            });
+        });
+
+    </script>
 </body>
 </html>
