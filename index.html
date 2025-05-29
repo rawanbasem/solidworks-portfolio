@@ -36,20 +36,9 @@
             opacity: 1;
             transform: translateY(0);
         }
-        /* Modal styles */
-        .modal {
-            transition: opacity 0.25s ease;
-        }
-        .modal-active {
-            overflow-x: hidden;
-            overflow-y: auto;
-        }
-        .modal-content {
-            transition: transform 0.25s ease;
-        }
     </style>
 </head>
-<body class="bg-gradient-to-br from-orange-50 via-sky-100 to-sky-200 text-blue-700 antialiased">
+<body class="bg-gradient-to-br from-orange-50 via-sky-100 to-sky-200 text-blue-800 antialiased">
 
     <header id="top" class="py-16 text-center bg-white/80 backdrop-blur-md shadow-lg">
         <div class="container mx-auto px-6">
@@ -76,8 +65,8 @@
 
         <section id="about" class="mb-20 fade-in-section">
             <h2 class="text-4xl font-semibold mb-8 text-blue-900 border-b-2 border-blue-700/30 pb-2">About Me</h2>
-            <div class="bg-white p-8 rounded-xl shadow-xl text-lg leading-relaxed text-blue-700">
-                <p>
+            <div class="bg-white p-8 rounded-xl shadow-xl text-lg leading-relaxed">
+                <p class="text-black">
                     I am a Mechatronics Engineering graduate from Sabancı University, with a passion for mechanical design, robotics, and CAD modeling.
                     With hands-on experience in SolidWorks, MATLAB, and Python, I enjoy designing complex systems and contributing to innovative engineering projects. My interests include drawing, diving, and exploring technologies that enhance automation and space systems.
                 </p>
@@ -91,10 +80,7 @@
                 <div class="project-card bg-white rounded-xl shadow-xl overflow-hidden transform hover:scale-105 transition-transform duration-300 flex flex-col">
                     <div class="p-6 flex-grow flex flex-col">
                         <h3 class="project-title text-2xl font-semibold mb-3 text-blue-800">CAD Model of High Bypass Turbofan Engine</h3>
-                        <p class="project-description text-blue-700 mb-4 text-sm leading-relaxed">Created a full 3D model in SolidWorks. Led the team in material selection and produced detailed technical drawings for each component and the overall assembly.</p>
-                        <button class="more-info-button mt-auto bg-blue-700 hover:bg-blue-800 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition-colors duration-300 text-sm">
-                            More Info
-                        </button>
+                        <p class="project-description text-black mb-4 text-sm leading-relaxed">Created a full 3D model in SolidWorks. Led the team in material selection and produced detailed technical drawings for each component and the overall assembly.</p>
                     </div>
                     <div class="slideshow-container p-4 bg-sky-50 flex overflow-x-auto space-x-3">
                         <img src="PHOTO-2024-10-26-13-42-23.jpg" alt="Turbofan Engine" class="h-40 w-auto object-cover rounded-lg shadow-md cursor-pointer hover:opacity-80 transition-opacity" onerror="this.src='https://placehold.co/300x200/E0F2FE/0C4A6E?text=Turbofan+1'; this.onerror=null;"/>
@@ -111,10 +97,7 @@
                      <img src="PHOTO-2024-10-26-13-47-04.jpg" alt="CubeSat Design" class="w-full h-56 object-cover" onerror="this.src='https://placehold.co/400x300/E0F2FE/0C4A6E?text=CubeSat'; this.onerror=null;"/>
                     <div class="p-6 flex-grow flex flex-col">
                         <h3 class="project-title text-2xl font-semibold mb-3 text-blue-800">SU-Polymer CubeSat Structure</h3>
-                        <p class="project-description text-blue-700 text-sm leading-relaxed mb-4">Led structural design in a space mission testing 2DPA-1 super-material. Created a precise CAD structure that integrates mechanical and electronic components.</p>
-                        <button class="more-info-button mt-auto bg-blue-700 hover:bg-blue-800 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition-colors duration-300 text-sm">
-                            More Info
-                        </button>
+                        <p class="project-description text-black text-sm leading-relaxed mb-4">Led structural design in a space mission testing 2DPA-1 super-material. Created a precise CAD structure that integrates mechanical and electronic components.</p>
                     </div>
                 </div>
 
@@ -122,10 +105,7 @@
                     <img src="PHOTO-2024-10-26-13-47-05 2.jpg" alt="Stair Structure" class="w-full h-56 object-cover" onerror="this.src='https://placehold.co/400x300/E0F2FE/0C4A6E?text=Stair+Platform'; this.onerror=null;"/>
                     <div class="p-6 flex-grow flex flex-col">
                         <h3 class="project-title text-2xl font-semibold mb-3 text-blue-800">Stair Platform Assembly</h3>
-                        <p class="project-description text-blue-700 text-sm leading-relaxed mb-4">Designed a steel staircase platform using SolidWorks. Considered assembly constraints and stability during design.</p>
-                        <button class="more-info-button mt-auto bg-blue-700 hover:bg-blue-800 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition-colors duration-300 text-sm">
-                            More Info
-                        </button>
+                        <p class="project-description text-black text-sm leading-relaxed mb-4">Designed a steel staircase platform using SolidWorks. Considered assembly constraints and stability during design.</p>
                     </div>
                 </div>
 
@@ -133,10 +113,7 @@
                      <img src="robotic_arm.jpg" alt="Robotic Arm Model" class="w-full h-56 object-cover" onerror="this.src='https://placehold.co/400x300/E0F2FE/0C4A6E?text=Robotic+Arm'; this.onerror=null;"/>
                     <div class="p-6 flex-grow flex flex-col">
                         <h3 class="project-title text-2xl font-semibold mb-3 text-blue-800">Manipulator Robot Arm Design</h3>
-                        <p class="project-description text-blue-700 text-sm leading-relaxed mb-4">Designed and simulated a robotic arm in SolidWorks. Integrated motor simulations using LTspice and implemented control algorithms in MATLAB.</p>
-                        <button class="more-info-button mt-auto bg-blue-700 hover:bg-blue-800 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition-colors duration-300 text-sm">
-                            More Info
-                        </button>
+                        <p class="project-description text-black text-sm leading-relaxed mb-4">Designed and simulated a robotic arm in SolidWorks. Integrated motor simulations using LTspice and implemented control algorithms in MATLAB.</p>
                     </div>
                 </div>
             </div>
@@ -240,18 +217,6 @@
         </svg>
     </button>
 
-    <div id="moreInfoModal" class="modal fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black bg-opacity-50 opacity-0 pointer-events-none">
-        <div class="modal-content bg-white rounded-lg shadow-xl w-full max-w-lg p-6 transform scale-95">
-            <div class="flex justify-between items-center mb-4">
-                <h3 id="modalTitle" class="text-2xl font-semibold text-blue-800">Project Details</h3>
-                <button id="closeModalButton" class="text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
-            </div>
-            <div id="modalBody" class="text-blue-700">
-                </div>
-        </div>
-    </div>
-
-
     <script>
         // Set current year in footer
         document.getElementById('currentYear').textContent = new Date().getFullYear();
@@ -292,112 +257,6 @@
             sectionObserver.observe(section);
         });
         
-        // More Info Modal Functionality
-        const moreInfoModal = document.getElementById('moreInfoModal');
-        const modalTitleElement = document.getElementById('modalTitle');
-        const modalBody = document.getElementById('modalBody');
-        const closeModalButton = document.getElementById('closeModalButton');
-        const moreInfoButtons = document.querySelectorAll('.more-info-button');
-
-        // Placeholder content for "More Info"
-        const projectDetailsContent = {
-            "CAD Model of High Bypass Turbofan Engine": `
-                <h4 class="text-lg font-semibold text-blue-800 mb-2">Detailed Overview:</h4>
-                <p class="mb-3 text-blue-700">This project involved the meticulous design and assembly of a high bypass turbofan engine using SolidWorks. The primary goal was to create a comprehensive and accurate 3D representation, suitable for simulation, analysis, and educational purposes.</p>
-                <h5 class="text-md font-semibold text-blue-800 mb-1">Key Responsibilities & Achievements:</h5>
-                <ul class="list-disc list-inside space-y-1 mb-3 text-blue-700">
-                    <li><strong>Component Modeling:</strong> Each part, from the complex geometry of fan blades and turbine stages to the intricacies of the combustion chamber and nacelle, was modeled with high precision.</li>
-                    <li><strong>Material Selection Leadership:</strong> Led the team in researching and selecting appropriate materials for various engine components, balancing factors like weight, tensile strength, thermal resistance, and cost. This involved comparing alloys, composites, and ceramics.</li>
-                    <li><strong>Assembly Design & Tolerance Analysis:</strong> Developed the complete engine assembly, ensuring proper fit and function of all parts. Performed tolerance stack-up analysis for critical interfaces.</li>
-                    <li><strong>Technical Drawings:</strong> Produced a full set of detailed 2D technical drawings for each component and the overall assembly, adhering to industry drafting standards (e.g., ASME Y14.5). These drawings included dimensions, geometric tolerances, material specifications, and manufacturing notes.</li>
-                    <li><strong>Motion Study (Optional):</strong> Explored SolidWorks Motion to simulate basic kinematic movements of engine parts, such as rotor spin.</li>
-                </ul>
-                <h5 class="text-md font-semibold text-blue-800 mb-1">Engineering Principles Applied:</h5>
-                <p class="text-blue-700">Thermodynamics, aerodynamics, mechanics of materials, machine design, and precision engineering.</p>
-            `,
-            "SU-Polymer CubeSat Structure": `
-                <h4 class="text-lg font-semibold text-blue-800 mb-2">Project Insights:</h4>
-                <p class="mb-3 text-blue-700">The SU-Polymer CubeSat structure was a critical component of a pioneering space mission aimed at testing the novel 2DPA-1 super-material in the harsh environment of low Earth orbit. This project demanded exceptional precision and reliability.</p>
-                <h5 class="text-md font-semibold text-blue-800 mb-1">Key Responsibilities & Achievements:</h5>
-                <ul class="list-disc list-inside space-y-1 mb-3 text-blue-700">
-                    <li><strong>Structural Design Leadership:</strong> Spearheaded the design of the CubeSat's primary and secondary structures using SolidWorks, ensuring it could withstand launch vibrations, shock loads, and thermal cycling in space.</li>
-                    <li><strong>Material Integration:</strong> Incorporated the experimental 2DPA-1 material into the design, considering its unique properties and interface requirements with traditional aerospace materials like aluminum alloys.</li>
-                    <li><strong>Component Integration:</strong> Meticulously planned the layout and mounting mechanisms for all subsystems, including the onboard computer, power system, communication modules, attitude determination and control system (ADCS), and the payload itself. Ensured proper harness routing and connector access.</li>
-                    <li><strong>CAD Precision & Mass Budgeting:</strong> Maintained a high-fidelity CAD model, crucial for interference checks, center of gravity calculations, and adherence to the strict mass and volume constraints of the CubeSat standard (e.g., 1U, 2U, or 3U).</li>
-                    <li><strong>Assembly & Test Planning Support:</strong> Provided CAD data and design insights to support the assembly, integration, and testing (AIT) phases of the CubeSat.</li>
-                </ul>
-                <h5 class="text-md font-semibold text-blue-800 mb-1">Engineering Principles Applied:</h5>
-                <p class="text-blue-700">Space systems engineering, structural mechanics, material science, CAD/CAM, and design for manufacturability and assembly (DFMA) in the context of aerospace applications.</p>
-            `,
-            "Stair Platform Assembly": `
-                <h4 class="text-lg font-semibold text-blue-800 mb-2">Design Details:</h4>
-                <p class="mb-3 text-blue-700">This project focused on the practical design of a steel staircase platform, emphasizing structural integrity, ease of assembly, and safety considerations. SolidWorks was used for all modeling and drawing generation.</p>
-                <h5 class="text-md font-semibold text-blue-800 mb-1">Key Design Considerations:</h5>
-                <ul class="list-disc list-inside space-y-1 mb-3 text-blue-700">
-                    <li><strong>Structural Analysis Prep:</strong> Designed with load paths in mind, selecting appropriate steel profiles (I-beams, channels, angles) for stringers, treads, landings, and support columns to ensure stability under typical live and dead loads. (Note: Full FEA may be a separate step).</li>
-                    <li><strong>Modularity & Assembly:</strong> Focused on designing components that could be easily fabricated and assembled on-site, considering bolted vs. welded connections and access for tools.</li>
-                    <li><strong>Safety Standards:</strong> Incorporated design elements compliant with relevant safety codes, such as appropriate tread depth, riser height, handrail dimensions, and guardrail spacing.</li>
-                    <li><strong>Material Efficiency:</strong> Aimed for an economical design by optimizing material usage without compromising structural safety.</li>
-                    <li><strong>Detailed Drawings:</strong> Created comprehensive assembly drawings and individual part drawings with weld symbols, material callouts, and Bills of Materials (BOM).</li>
-                </ul>
-                <h5 class="text-md font-semibold text-blue-800 mb-1">Engineering Principles Applied:</h5>
-                <p class="text-blue-700">Statics, mechanics of materials, structural steel design, CAD detailing, and manufacturing processes.</p>
-            `,
-            "Manipulator Robot Arm Design": `
-                <h4 class="text-lg font-semibold text-blue-800 mb-2">System Overview:</h4>
-                <p class="mb-3 text-blue-700">This project encompassed the design, simulation, and control system integration for a multi-axis manipulator robot arm. The goal was to create a functional virtual prototype demonstrating key robotics principles.</p>
-                <h5 class="text-md font-semibold text-blue-800 mb-1">Key Components & Achievements:</h5>
-                <ul class="list-disc list-inside space-y-1 mb-3 text-blue-700">
-                    <li><strong>Mechanical Design (SolidWorks):</strong> Designed the links, joints (revolute and/or prismatic), and end-effector mounting of the robotic arm. Focused on achieving desired reach, payload capacity, and degrees of freedom.</li>
-                    <li><strong>Actuator Sizing & Integration:</strong> Selected appropriate virtual motors and gearboxes, considering torque, speed, and precision requirements for each joint. Modeled these in SolidWorks.</li>
-                    <li><strong>Electrical Simulation (LTspice):</strong> Created circuit models for the motor drivers and simulated their performance, analyzing aspects like current draw and voltage levels under load.</li>
-                    <li><strong>Control Algorithm Development (MATLAB):</strong> Implemented forward and inverse kinematics algorithms to control the robot arm's end-effector position and orientation. Developed basic trajectory planning routines.</li>
-                    <li><strong>Integrated Simulation:</strong> Utilized SolidWorks Motion or Simulink Simscape Multibody to co-simulate the mechanical dynamics with the control system, verifying the arm's movement and response to commands.</li>
-                </ul>
-                <h5 class="text-md font-semibold text-blue-800 mb-1">Engineering Principles Applied:</h5>
-                <p class="text-blue-700">Robotics, kinematics, dynamics, control systems theory, mechatronics system design, CAD, and circuit simulation.</p>
-            `
-        };
-
-        const openModal = (projectTitle) => {
-            modalTitleElement.textContent = projectTitle || "Project Details";
-            const infoContent = projectDetailsContent[projectTitle] || "<p>More details for this project are coming soon!</p>";
-            // Ensure the prose class is applied to the container for the injected HTML for consistent styling
-            modalBody.innerHTML = `<div class="prose prose-sm max-w-none text-blue-700">${infoContent}</div>`; 
-            
-            moreInfoModal.classList.remove('opacity-0', 'pointer-events-none');
-            moreInfoModal.classList.add('opacity-100');
-            moreInfoModal.querySelector('.modal-content').classList.remove('scale-95');
-            moreInfoModal.querySelector('.modal-content').classList.add('scale-100');
-            document.body.classList.add('modal-active');
-        };
-
-        const closeModal = () => {
-            moreInfoModal.classList.add('opacity-0');
-            moreInfoModal.querySelector('.modal-content').classList.add('scale-95');
-            setTimeout(() => {
-                moreInfoModal.classList.add('pointer-events-none');
-                moreInfoModal.querySelector('.modal-content').classList.remove('scale-100');
-                document.body.classList.remove('modal-active');
-                modalBody.innerHTML = ''; // Clear content
-            }, 250); 
-        };
-
-        closeModalButton.addEventListener('click', closeModal);
-        moreInfoModal.addEventListener('click', (event) => {
-            if (event.target === moreInfoModal) { 
-                closeModal();
-            }
-        });
-
-        moreInfoButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const projectCard = button.closest('.project-card');
-                const projectTitle = projectCard.querySelector('.project-title').textContent;
-                openModal(projectTitle);
-            });
-        });
-
         // Image click placeholder
         const projectImages = document.querySelectorAll('.project-card img, .slideshow-container img');
         projectImages.forEach(img => {
